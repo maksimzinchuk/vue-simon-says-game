@@ -1,7 +1,8 @@
 <template>
   <div>
     <h2>Round: {{ round }}</h2>
-    <button @click="startGame">Start</button>
+    <button @click="startGame"
+            class="button">Start</button>
     <p v-if="isOver" class="fail">Sorry, you lost after {{ round }} rounds</p>
   </div>
 </template>
@@ -36,4 +37,15 @@ export default {
   width: 140px
   margin: 10px 0 0
   position: absolute
+
+.button
+  border-radius: 10px
+  width: 100px
+  height: 40px
+  background: #88b3ff
+  font-size: 20px
+  outline: none
+  border: none
+  &:hover
+    background: #bcdeff
 </style>
