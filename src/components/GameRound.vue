@@ -1,0 +1,39 @@
+<template>
+  <div>
+    <h2>Round: {{ round }}</h2>
+    <button @click="startGame">Start</button>
+    <p v-if="isOver" class="fail">Sorry, you lost after {{ round }} rounds</p>
+  </div>
+</template>
+
+<script>
+import { mapGetters, mapActions } from "vuex";
+export default {
+  name: "GameRound",
+  computed: {
+    ...mapGetters({
+      round: "round",
+      endGame: "endGame",
+      isOver: "isOver"
+    })
+  },
+  methods: {
+    ...mapActions({
+      newStart: "endGame",
+      newGameRoundReset: "roundReset"
+    }),
+    startGame() {
+      this.newStart(false);
+      this.newGameRoundReset();
+      this.$store.dispatch("startGame", true);
+    }
+  }
+};
+</script>
+
+<style lang="sass" scoped>
+.fail
+  width: 140px
+  margin: 10px 0 0
+  position: absolute
+</style>
