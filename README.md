@@ -1,6 +1,6 @@
 # Игра Simon Says (Саймон говорит) 
 
-Ссылка на проект: https://maksimzinchuk.github.io/vue-simon-says-game
+Ссылка на проект: https://maksimzinchuk.github.io/vue-simon-says-game/index.html
 
 
 ## Правила игры  
